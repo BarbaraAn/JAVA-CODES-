@@ -1,0 +1,67 @@
+package guessthenumber;
+
+/**
+ *
+ * @author Barbara Angelopoulou
+ */
+public class GuessTheNumber {
+public static void main(String[] args) {
+        int a,p,d,c = 0;
+        boolean l; 
+        do
+        {
+         
+         a =(int)((9-0)*Math.random()+0);
+         p=3;
+                 
+         l= false;
+         System.out.println("welcome");
+         System.out.println("the computer selects a number,you have three attempts to find what that number is");
+         System.out.println("ready to find the number ?");
+         System.out.println("************ LETS PLAY ! ************");
+         do
+         {
+            System.out.println("what number do you believe has been selected?");
+            System.out.println("you have "+p+" tries");
+            d = scannerUserInput.getInteger();
+            p--;
+            
+            if(d<a)
+            {
+                System.out.println("the number is greater");
+            }
+            else
+            {
+                System.out.println("the number is lower");
+            }
+           
+            
+            if(d==a)
+            {
+                l=true;
+            }
+         }
+         while (p>=1 && d!=a);
+         if(l==true)
+         {
+             System.out.println("well done,you did it !");
+             System.out.println("if you want you can play again");
+             System.out.println("do you want to play again ?");
+             System.out.println("press 1 to play again or press any other key tocd leave the game");
+             c = scannerUserInput.getInteger();
+              
+         }
+         else
+         {
+            System.out.println("the number is "+a); 
+            System.out.println("maybe you find the number next time...");
+            System.out.println("if you want you can play again");
+            System.out.println("do you want to play again ?");
+            System.out.println("press 1 to play again or press any other key to leave the game");
+            c = scannerUserInput.getInteger();
+         }
+        }
+        while(c==1);
+    }
+}
+
