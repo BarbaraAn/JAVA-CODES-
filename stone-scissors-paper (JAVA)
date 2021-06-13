@@ -1,0 +1,129 @@
+package petra.calidi.xarti;
+
+/**
+ *
+ * @author Barbara Angelopoulou
+ */
+public class PetraCalidiXarti {
+    public static void main(String[] args) {
+       int i,e1,e2,s1,s2;
+       String n1,n2;
+
+System.out.println ("User No1 give your name:");
+
+n1= scannerUserInput.getString();
+
+System.out.println("User No2 give your name:");
+
+n2=scannerUserInput.getString();
+
+s1=0;
+s2=0;
+System.out.println ("welcome, ready for 3 round ?");
+
+
+System.out.println(" ************ LETS START ! ************ ");
+
+
+i=1;
+do
+{
+ System.out.println("ROUND No"+i);
+ // χρηστης 1
+
+ System.out.println(n1+" give your choise:");
+
+ System.out.println("press 1,2 or 3 \n 1.stone \n 2.scissor \n 3.paper \n 4.end game ");
+ //με την do-while κανουμε τον ελγχο εγκυροτητας
+ do
+ {
+   e1=scannerUserInput.getInteger();
+ }
+ while (e1!=1 && e1!=2 && e1!=3 && e1!=4);
+
+
+
+ // χρηστης 2
+
+ System.out.println(n2+" give your choise:");
+
+ System.out.println("press 1,2 or 3 \n 1.stone \n 2.scissor \n 3.paper \n 4.end game ");
+ do
+ {
+   e2=scannerUserInput.getInteger();
+ }
+ while(e2!=1 && e2!=2 && e2!=3 && e2!=4);
+
+ //εύρεση νικητή
+ if (e1 == e2)
+ //ισοποαλια θα ειναι καθε φορα που τα 2 ειναι ιδια
+ {
+  System.out.println("draw \n");
+   s1++;
+   s2++;
+ }
+ else if(e1==1)
+ {
+  if(e2== 2)
+   {
+ 	    System.out.println("round "+i+" winner is "+n1);
+        s1++;
+
+   }
+   else if(e2 == 3)
+   {
+        System.out.println("round "+i+" winner is "+n2);
+        s2++;
+   }
+ }
+ else if(e1==2)
+ {
+  if(e2== 1)
+   {
+ 	System.out.println("round "+i+" winner is "+n2);
+        s2++;
+   }
+   else if(e2 == 3)
+   {
+        System.out.println("round "+i+" winner is "+n1);
+        s1++;
+   }
+ }
+ else if(e1==3)
+ {
+  if(e2== 1)
+   {
+ 	System.out.println("round "+i+" winner is "+n1);
+        s1++;
+   }
+   else if(e2 == 2)
+   {
+        System.out.println("round "+i+" winner is "+n2);
+        s2++;
+   }
+ }
+ i++;
+}
+while((e1!=4 && e2!=4 ) && (i<=3));
+
+System.out.println(n1+"your score is: "+s1+" points");
+System.out.println(n2+"your score is: "+s2+" points");
+System.out.println(s1+"<--->"+s2);
+
+//μεσα απο μια if θα βρεθει ο νικητης
+
+if (s1>s2)
+{
+  System.out.println("** winnner is "+n1+" **");
+}
+else if (s1<s2)
+{
+  System.out.println("** winnner is "+n2+"**");
+}
+else if (s1==s2)
+{
+  System.out.println("** game is draw **");
+}
+    }
+    
+}
